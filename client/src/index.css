@@ -1,0 +1,118 @@
+:root {
+  --green: #1f7a5a;
+  --green-dark: #165a43;
+  --bg: #f4f7f5;
+  --text: #1c2b25;
+  --muted: #62746c;
+  --border: #d9e3de;
+  --red: #c0392b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0.4em 0; }
+h3 { font-size: 1.05rem; }
+a { color: var(--green); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+.center { text-align: center; margin: 30px 0; }
+.muted { color: var(--muted); margin: 2px 0; font-size: 0.92rem; }
+.error { background: #fdecea; color: var(--red); padding: 8px 12px; border-radius: 6px; }
+.success { background: #e6f5ee; color: var(--green-dark); padding: 8px 12px; border-radius: 6px; }
+
+/* navbar */
+.navbar {
+  background: var(--green);
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.brand { color: #fff; font-size: 1.3rem; font-weight: 700; text-decoration: none; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.links a { color: #d8efe5; text-decoration: none; font-size: 0.95rem; }
+.links a.active, .links a:hover { color: #fff; text-decoration: underline; }
+.hello { font-size: 0.9rem; }
+
+/* cards, forms */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.form { max-width: 420px; margin: 30px auto; display: flex; flex-direction: column; gap: 6px; }
+.form label { font-size: 0.9rem; font-weight: 600; margin-top: 6px; }
+
+input, select {
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  width: 100%;
+}
+input:focus, select:focus, button:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; }
+
+.filter-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+
+/* buttons */
+.btn {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.btn:hover { background: var(--green-dark); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.small { padding: 6px 12px; font-size: 0.85rem; }
+.btn.outline { background: #fff; color: var(--green); border: 1px solid var(--green); }
+.btn.danger { background: var(--red); }
+
+/* ride cards */
+.ride-card { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ride-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.fare { font-size: 1.3rem; font-weight: 700; color: var(--green); margin: 0; }
+.row { display: flex; gap: 8px; }
+.inline { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.inline input { width: 80px; }
+.pagination { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 20px; }
+
+/* status tags */
+.tag { padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; background: #e8eeeb; }
+.tag.open, .tag.accepted { background: #d7f0e3; color: var(--green-dark); }
+.tag.pending { background: #fff3cd; color: #8a6d00; }
+.tag.rejected, .tag.cancelled { background: #fdecea; color: var(--red); }
+.tag.completed { background: #dde8f7; color: #2a4d86; }
+
+/* tables and stats */
+.table { width: 100%; border-collapse: collapse; padding: 0; overflow: hidden; }
+.table th, .table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+.table th { background: #eef4f1; }
+.cap { text-transform: capitalize; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.stat { text-align: center; }
+.stat h2 { color: var(--green); margin: 0; }
+
+@media (max-width: 600px) {
+  .ride-right { align-items: flex-start; text-align: left; }
+  .table { display: block; overflow-x: auto; }
+}
